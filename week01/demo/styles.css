@@ -1,0 +1,72 @@
+body {
+    padding: 8px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(72, 72, 72);
+    max-width: 900px;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 16px 0;
+}
+
+.login-buttons {
+    margin-top: 32px;
+    margin-bottom: 64px;
+}
+
+.login-buttons button {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    
+    /* Override native styling */
+    /* text-decoration: none;
+    box-shadow: none;
+    font: inherit; */
+    
+    /* Our own styling */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 22px;
+    border-radius: 4px;
+    border: 2px solid rgb(0, 132, 137);
+    background: transparent;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background: rgb(235, 235, 235);
+}
+
+h2 {
+    margin-top: 32px;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.article-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h3 {
+    margin-top: 24px;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 14px 32px 8px 0;
+}
+
+li {
+    padding: 8px 0;
+    line-height: 1.375em;
+}
+
