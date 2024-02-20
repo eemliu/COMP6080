@@ -4,9 +4,11 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* .container {
+/* Flexbox */
+.container {
   display: flex;
   flex-direction: row;
   gap: 8px;
@@ -14,28 +16,18 @@ body {
   height: max-content;
   border: 1px solid black;
   padding: 32px;
-} */
-
-.container {
-  display: grid;
-  /* grid-template-columns: repeat(3, 1fr); */
-  grid-template-rows: repeat(1, 1fr);
-
-  gap: 8px;
-  /* grid-row-gap: 8px;
-  grid-column-gap: 8px; */
-
-  /* .container {
-  display: grid;
-  grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); /* Flexible single row */
- 
-  gap: 8px; 
 }
 
+/* Grid */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  gap: 8px;
+}
 
 .item {
   width: 100px;
   height: 100px;
   background-color: salmon;
+  border-radius: 2px;
 }
-

@@ -1,0 +1,49 @@
+body { 
+  font-family: sans-serif;
+  margin: 80px 48px 0 48px;
+}
+
+.article-wrapper { 
+  display: flex;
+  flex-direction: column;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.card { 
+  /* More general card styles */
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: #F2F2F2;
+  line-height: 32px;
+}
+
+.card > .footnote {
+  /* More general footnote styles for other cards */
+  text-align: right;
+  text-decoration: none;
+  color: #000000;
+}
+
+.header-card { 
+    /* Overlaying the container */
+    position: relative;
+    bottom: 48px;
+    left: 32px;
+    width: calc(100% - 32px);
+    box-sizing: border-box;
+}
+
+.header-card > .footnote { 
+  /* Specific footnote styles for the first header card */
+  margin-top: 72px;
+  font-weight: bold;
+}
+
+
