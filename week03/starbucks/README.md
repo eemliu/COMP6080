@@ -5,5 +5,5 @@
 - Order (i.e. coffee order)
 
 > Output to throw error if:
-> Name is less than 3 characters or more than 50 characters
-> Order is less than 3 characters or more than 50 characters
+> - Name is less than 3 characters or more than 50 characters
+> - Order is less than 3 characters or more than 50 characters
