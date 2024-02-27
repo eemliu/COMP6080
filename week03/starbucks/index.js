@@ -1,18 +1,29 @@
-const name = document.getElementById("customerName");
-const locationVal = document.getElementById("location");
-const order = document.getElementById("order");
-const submitBtn = document.getElementById("submit-btn");
+const customerName = document.getElementById('customerName');
+const locationVal = document.getElementById('location');
+const order = document.getElementById('order');
+const submitBtn = document.getElementById('submit-btn');
+const output = document.getElementById('output');
+
 
 const validate = () => {
   if (customerName.value.length < 3 || customerName.value.length > 50) {
-    output.textContent = "Please enter a valid name";
-    return false;
+    alert('Name must be between 3 and 50 characters');
+    return false
   } else if (order.value.length < 3 || order.value.length > 50) {
-    output.textContent = "Please enter a valid order";
+    alert('Order must be between 3 and 50 characters');
     return false;
   }
-  output.textContent = `${customerName.value} has submitted an order at ${new Date().toLocaleDateString()} for ${order.value} for pickup at ${locationVal.value}`
+  output.textContent = `${customerName.value} has submitted an order at ${new Date().toLocaleDateString()} for ${order.value} for pickup at ${locationVal.value}`;
   return true;
 }
 
-submitBtn.addEventListener("click", validate);
+// For enter key
+document.addEventListener('keyup', function(e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    validate();
+  }
+});
+
+// For click
+submitBtn.addEventListener('click', validate);
