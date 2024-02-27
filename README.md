@@ -1,1 +1,1 @@
-This my repo for all COMP6080 resources!
+This my repo for all COMP6080 demo resources!
