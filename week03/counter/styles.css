@@ -1,0 +1,33 @@
+html,
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter-button { 
+  width: 70px;
+  height: 40px;
+  border: none;
+  background-color: antiquewhite;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+.counter-button:hover {
+  transform: scale(1.5);
+  transition-duration: 30ms;
+  cursor: pointer;
+}
+
+.large-number {
+  font-size: xx-large;
+  margin: 0% 5%;
+}
