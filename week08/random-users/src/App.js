@@ -1,30 +1,30 @@
 import { useEffect, useState } from 'react';
-import UserCard from './components/UserCard';
 import './App.css';
+
+import UserCard from './components/UserCard';
 
 function App() {
   const [users, setUsers] = useState(null);
   const [reveal, setReveal] = useState(false);
 
-  useEffect(() => {
-    fetch('https://randomuser.me/api/?results=25', {
-      method: "GET"
+  useEffect(() => { 
+    fetch('https://randomuser.me/api/?results=4', {
+      method: 'GET',
     })
-    .then((response) => response.json())
-    .then((data) => setUsers(data.results));
+    .then(response => response.json())
+    .then(data => setUsers(data.results))
   }, [])
 
-  console.log(users);
-
   const revealUsers = () => setReveal(!reveal);
+
   return (
     <div className='wrapper'>
-      <h1>Random user list</h1>
-      <button onClick={revealUsers}>Get random users</button>
+      <h1>Random users</h1>
+      <button onClick={revealUsers}>Get users</button>
       <div className="user-card-container">
         {reveal ? users.map((user) =>
-          <UserCard user={user} />)
-          : null}
+          <UserCard user={user}/>
+        ) : null}
       </div>
     </div>
   );
