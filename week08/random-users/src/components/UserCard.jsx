@@ -10,7 +10,7 @@ const UserItem = ({ user }) => {
   return (
     <div className="user-card">
       <img src={picture.large} alt={`${name.title} ${name.first} ${name.last}`} />
-      <div className="user-info">
+      <div>
         <h2>
           {name.title} {name.first} {name.last}
         </h2>
