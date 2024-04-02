@@ -1,19 +1,24 @@
+.wrapper { 
+  height: 100vw;
+  width: 100vw;
+}
+
+button {
+  padding: 16px;
+  border: none;
+  font-size: medium;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: salmon;
+  transition-duration: 3s ease-in-out;
+}
+
 .user-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.user-card {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 200px;
-  margin: 10px;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-}
-
-.user-card img {
-  width: 100%;
-  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }

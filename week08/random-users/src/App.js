@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import UserCard from './components/UserCard';
+import './App.css';
 
 function App() {
-  const [users, setUsers] = useState();
+  const [users, setUsers] = useState(null);
   const [reveal, setReveal] = useState(false);
 
   useEffect(() => {
@@ -17,7 +18,7 @@ function App() {
 
   const revealUsers = () => setReveal(!reveal);
   return (
-    <div>
+    <div className='wrapper'>
       <h1>Random user list</h1>
       <button onClick={revealUsers}>Get random users</button>
       <div className="user-card-container">

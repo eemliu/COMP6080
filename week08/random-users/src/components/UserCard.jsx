@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './styles.css';
+
 const UserItem = ({ user }) => {
   const { name, email, location, phone, dob, picture } = user;
 
