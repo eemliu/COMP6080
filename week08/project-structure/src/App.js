@@ -1,15 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 
-import Navbar from './Navbar';
-import Counter from './Counter';
+import Navbar from './components/Navbar';
+import Counter from './components/Counter';
+import Button from './components/Button';
 
 function App() {
   return (
     <div className="App">
+      <div>Hello!</div>
+      <Button label="My button" />
       <Navbar />
-      <div>Hero</div>
-      <div>About me</div>
       <Counter />
     </div>
   );
