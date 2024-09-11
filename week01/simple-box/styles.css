@@ -7,18 +7,18 @@ body {
 }
 
 .box {
-    margin: 10px 5px;
-    padding: 3px;
-    border: 1px solid #333;
     width: 100px;
     height: 50px;
-    background-color: teal;
+    padding: 3px;
+    border: 1px solid #333333;
+    margin: 10px 5px;
+    background-color: rgb(255, 255, 0);
 }
 
-/* .cat-img { 
+.cat-img { 
     width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
-} */
+}
