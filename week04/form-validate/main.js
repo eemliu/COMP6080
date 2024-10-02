@@ -1,9 +1,12 @@
+const userName = document.getElementById('firstName')
+const userEmail = document.getElementById('email')
+
 const nameValid = () => {
-  const val = document.getElementById('firstName').value;
+  const val = userName.value;
   return RegExp('^[a-zA-Z]{2,20}$').test(val);
 };
 const emailValid = () => {
-  const val = document.getElementById('email').value;
+  const val = userEmail.value;
   return RegExp('^.+\@.+\..+$').test(val);
 };
 const checkSubmit = () => {
@@ -13,21 +16,24 @@ const checkSubmit = () => {
   }
 };
 
-document.getElementById('firstName').addEventListener('keyup', checkSubmit);
-document.getElementById('firstName').addEventListener('blur', () => {
+// Name field
+userName.addEventListener('keyup', checkSubmit);
+userName.addEventListener('blur', () => {
   if (!nameValid()) {
-      document.getElementById('firstName').style.background = 'red';
+      userName.style.background = 'red';
   }
 });
-document.getElementById('firstName').addEventListener('focus', () => {
-  document.getElementById('firstName').style.background = 'none';
+userName.addEventListener('focus', () => {
+  userName.style.background = 'none';
 });
-document.getElementById('email').addEventListener('keyup', checkSubmit);
-document.getElementById('email').addEventListener('blur', () => {
+
+// Email field
+userEmail.addEventListener('keyup', checkSubmit);
+userEmail.addEventListener('blur', () => {
   if (!emailValid()) {
-      document.getElementById('email').style.background = 'red';
+      userEmail.style.background = 'red';
   }
 });
-document.getElementById('email').addEventListener('focus', () => {
-  document.getElementById('email').style.background = 'none';
+userEmail.addEventListener('focus', () => {
+  userEmail.style.background = 'none';
 });
