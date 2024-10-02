@@ -1,7 +1,7 @@
 const counter = document.getElementById("counter");
 
 // 2. Populate counter with a 0
-counter.innerText = "0";
+counter.innerText = "0"; // Innertext represents text content of elements
 
 // 3. Increment by 1 when the '+' button is clicked
 const increment = document.getElementById("increment");
