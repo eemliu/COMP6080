@@ -1,44 +1,30 @@
-const container = document.createElement('div');
-container.setAttribute('id', 'container')
-container.innerText = 'Loading, Please wait'
-document.body.appendChild(container)
-const createElement = text => {
-    const box = document.createElement('div');
-    box.className = 'box';
-    box.innerText = text;
-    container.appendChild(box);
-    return box;
-};
+const output = document.getElementById("output");
 
-fetch('http://www.cse.unsw.edu.au/~cs6080/raw/data/package.json')
-    .then(res => res.json())
-    .then(res => {
-        localStorage.setItem('comp6080', JSON.stringify(res));
-        container.innerText = '';
-        renderItems(res);
-    })
-    .catch(e => {
-        container.innerText = '';
-        let jsonData = localStorage.getItem('comp6080');
-        if(!jsonData) {
-          displayMessage('No cached data. Please check your network');
-          return;
-        }
-        renderItems(JSON.parse(jsonData));
-        displayMessage('This data is not live');
-    });
 
-const renderItems = res => {
-    const namebox = createElement('name');
-    const nameElement = createElement(res.name);
-    const reindeers = createElement('reindeers');
-    const numberElement = createElement(res.reindeers);
-    const primary = createElement('primary');
-    const primaryElement = createElement(res.primary);
-};
+const storeData = () => {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
 
-const displayMessage = msg => {
-    const p = document.createElement('p');
-    p.innerText = msg;
-    document.body.appendChild(p);
-};
+  const userData = {
+    name: name,
+    email: email,
+  };
+
+  const userDataJSON = JSON.stringify(userData);
+  localStorage.setItem("userData", userDataJSON);
+  output.textContent = "Data stored!";
+}
+
+const retrieveData = () => {
+  const userDataJSON = localStorage.getItem("userData");
+  const userData = JSON.parse(userDataJSON);
+
+  if (!userData) {
+    output.textContent = "No data found!";
+    return
+  } else {
+    const name = userData.name;
+    const email = userData.email;
+    output.textContent = `Retrieved data: Name: ${name}, Email: ${email}`;
+  }
+}

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="styles.css">
-        <title>Store.html</title>
-    </head>
-    <body>
-        <script src="main.js"></script>
-    </body>
+<html>
+  <head>
+    <title>Local Storage Demo (Advanced)</title>
+  </head>
+  <body>
+    <input type="text" id="name" placeholder="Enter your name" />
+    <input type="text" id="email" placeholder="Enter your email" />
+    <button onclick="storeData()">Store User Data</button>
+    <button onclick="retrieveData()">Retrieve User Data</button>
+    <p id="output"></p>
+    <script src="main.js"></script>
+  </body>
 </html>
