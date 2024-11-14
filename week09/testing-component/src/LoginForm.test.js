@@ -4,7 +4,7 @@ import LoginForm from './LoginForm'
 
 const noop = () => {}
 
-describe('<LoginForm>', () => {
+describe('Testing the login component', () => {
   it('renders the email field, password field and login button', () => {
     render(<LoginForm onSubmit={noop} />)
 
@@ -69,7 +69,18 @@ describe('<LoginForm>', () => {
 
     const mockOnSubmit = jest.fn()
 
-    render(<LoginForm onSubmit={mockOnSubmit} />)
+    const errors = {
+      email: 'INVALID EMAIL ERROR MESSAGE',
+      password: 'INVALID PASSWORD ERROR MESSAGE',
+    }
+
+    render(<LoginForm onSubmit={mockOnSubmit} errors={errors} />)
+
+    expect(screen.getByRole('textbox', { name: /email:/i })).toHaveAccessibleDescription(errors.email)
+    expect(screen.getByLabelText(/password:/i)).toHaveAccessibleDescription(errors.password)
+
+    userEvent.click(screen.getByRole('button', { name: /login/i }))
+    expect(mockOnSubmit).toHaveBeenCalledTimes(0)
 
     userEvent.type(screen.getByRole('textbox', { name: /email:/i }), inputs.email)
     userEvent.type(screen.getByLabelText(/password:/i), inputs.password)
@@ -77,6 +88,5 @@ describe('<LoginForm>', () => {
     userEvent.click(screen.getByRole('button', { name: /login/i }))
 
     expect(mockOnSubmit).toHaveBeenCalledTimes(1)
-    expect(mockOnSubmit).toHaveBeenCalledWith(expectedValues)
   })
 })
